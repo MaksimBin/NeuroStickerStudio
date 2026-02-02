@@ -1,5 +1,9 @@
 # NeuroStickerStudio
 ---
+<h1 align="center">
+  <img src="stick-banner.jpeg" alt="Maxim Frontend Developer Banner" />
+</h1>
+---
 
 💎 NeuroSticker Studio
 
