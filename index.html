@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NeuroSticker Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- Top centered image placeholder (replace src with your logo when ready) -->
+    <div class="logo-wrap" aria-hidden="false">
+<img src="/styck.jpeg" alt="" width="200"/>
+
+    <h1>NeuroSticker Studio</h1>
+    </div>
+
+
+
+    <div class="controls-row" role="region" aria-label="Генерация стикеров">
+<textarea id="prompt" class="prompt" placeholder="Опиши стикер: например, 'минималистичное ушко'"></textarea>
+      <select id="provider" title="Провайдер" class="select">
+        <option value="openai">OpenAI Images</option>
+        <option value="stability">Stability AI</option>
+      </select>
+      <select id="count" title="Количество" class="select">
+        <option value="1">1</option><option value="3">3</option><option value="5">5</option>
+        <option value="8">8</option><option value="10" selected>10</option>
+      </select>
+      <button id="genBtn" class="btn" aria-label="Сгенерировать">Сгенерировать</button>
+    </div>
+
+    <div class="sub-controls" aria-hidden="false">
+      <label style="align-self:center;color:#bfeee0;font-size:14px;">Размер</label>
+      <select id="size" class="select" aria-label="Размер">
+        <option value="512">512×512</option>
+        <option value="256">256×256</option>
+        <option value="100">100×100</option>
+      </select>
+      <button id="downloadAll" class="btn" aria-label="Скачать набор">Скачать набор (ZIP)</button>
+    </div>
+
+    <div id="gallery" class="gallery" aria-live="polite"></div>
+    <div class="status" id="status"></div>
+    <div class="note">⚡ Внимание: вставлять ключи в клиентский код небезопасно. Это прототип для локальной отладки.</div>
+  </div>
+  
+  
+    <!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <div id="modal-message"></div>
+    <button id="modal-ok" class="btn">ОК</button>
+  </div>
+</div>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+ <script src="main.js" type="text/javascript" charset="utf-8">
+ </script>
+</body>
+</html>
